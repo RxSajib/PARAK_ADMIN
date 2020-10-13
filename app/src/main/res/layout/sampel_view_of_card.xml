@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/StatusInputID"
+        android:hint="Enter Status"
+        android:inputType="text"
+        android:padding="@dimen/_10sdp"
+        android:maxLength="15"
+        android:singleLine="true"
+        android:textSize="@dimen/_15sdp"
+        android:fontFamily="@font/ubuntureguiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </EditText>
+
+    <RelativeLayout
+        android:id="@+id/RadioGroup"
+        android:layout_below="@id/StatusInputID"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/FontBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/FontsID"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntureguiar"
+                android:textColor="@color/carbon_black"
+                android:text="Available Fonts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:id="@+id/FontsSelectedIcon"
+                    android:src="@drawable/font_cheack"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp">
+                </ImageView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_toRightOf="@+id/FontsSelectedIcon"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/FontsSelected"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="No fonts selected"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/lobster_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+        <ListView
+            android:id="@+id/FontListID"
+            android:layout_below="@+id/FontBox"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        </ListView>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/corlineID"
+                    android:layout_width="@dimen/_15sdp"
+                    android:background="@drawable/cheackbox_background"
+                    android:layout_height="@dimen/_15sdp">
+                </RelativeLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_toRightOf="@id/corlineID"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="corline"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/carbon_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ArtMaria"
+                    android:layout_width="@dimen/_15sdp"
+                    android:background="@drawable/cheackbox_background"
+                    android:layout_height="@dimen/_15sdp">
+                </RelativeLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_toRightOf="@id/ArtMaria"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Art Maria"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/carbon_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/Cattily"
+                    android:layout_width="@dimen/_15sdp"
+                    android:background="@drawable/cheackbox_background"
+                    android:layout_height="@dimen/_15sdp">
+                </RelativeLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_toRightOf="@id/Cattily"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Cattily Demo Regular"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/carbon_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_below="@+id/RadioGroup"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/UpdateButtonID"
+            android:layout_alignParentRight="true"
+            android:text="Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+        <Button
+            android:id="@+id/CancelFontButtonID"
+            android:layout_alignParentLeft="true"
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+
+    </RelativeLayout>
+
+</RelativeLayout>

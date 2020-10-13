@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BottomnavPage.NewsTabPages">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_below="@+id/HomeToolbarID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:visibility="gone"
+                android:id="@+id/JobsButtonID"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/white"
+                android:layout_marginRight="25dp"
+                app:cardCornerRadius="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:background="#fee6f7"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/JobsIConID"
+                        android:src="@drawable/jobsicon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp">
+                    </ImageView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/JobsIConID"
+                        android:layout_marginLeft="7dp"
+                        android:textSize="22sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@android:color/black"
+                        android:text="News"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/NewsListID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/LogOutButton"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:text="Upload"
+                app:icon="@drawable/logout_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/TextMessaeRootBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/GlobalProfileImage"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:src="@drawable/profile_image_back"
+        android:layout_height="@dimen/_20sdp">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <RelativeLayout
+        android:id="@+id/TextMessageBox"
+        android:layout_toRightOf="@+id/GlobalProfileImage"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/_80sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/message_design"
+        android:layout_height="wrap_content">
+
+
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_8sdp"
+            android:id="@+id/Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/Time"
+            android:id="@+id/Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+
+       <com.google.android.material.textview.MaterialTextView
+           android:id="@+id/MessageText"
+           android:textSize="@dimen/_10sdp"
+           android:layout_below="@+id/Time"
+           android:layout_marginLeft="@dimen/_12sdp"
+           android:layout_marginRight="@dimen/_5sdp"
+           android:layout_marginTop="@dimen/_3sdp"
+           android:textColor="@color/carbon_black_87"
+           android:layout_marginBottom="@dimen/_5sdp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+
+       </com.google.android.material.textview.MaterialTextView>
+
+
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/ImageBox"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ImageProfileImage"
+            android:src="@drawable/background_image"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/ImageProfileImage"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_120sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="@dimen/_180sdp"
+                app:riv_corner_radius="20dip"
+                android:id="@+id/Image"
+                android:src="@drawable/background_image"
+                android:scaleType="centerCrop"
+                android:layout_height="@dimen/_120sdp">
+
+            </com.makeramen.roundedimageview.RoundedImageView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:id="@+id/ImageTime"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@color/carbon_white"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/ImageTime"
+                android:textColor="@color/carbon_white"
+                android:text="Date"
+                android:id="@+id/ImageDate"
+                android:textSize="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/PdfLayout"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/PdfProfileImage"
+            android:src="@drawable/background_image"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+        <RelativeLayout
+            android:layout_toRightOf="@+id/PdfProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:background="@drawable/message_design"
+            android:layout_height="wrap_content">
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:id="@+id/PdfTime"
+                android:text="10:00 AM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textSize="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_toRightOf="@+id/PdfTime"
+                android:text="Date"
+                android:id="@+id/PdfDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+
+            <RelativeLayout
+                android:layout_below="@+id/PdfTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+
+                    android:id="@+id/PdfIcon"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:src="@drawable/pdf_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp">
+
+                </ImageView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_toRightOf="@+id/PdfIcon"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:text="Download Pdf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/AudioBox"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="visible"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/AudioprofileImage"
+            android:layout_width="@dimen/_20sdp"
+            android:src="@drawable/background_image"
+            android:layout_height="@dimen/_20sdp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+        <RelativeLayout
+            android:layout_toRightOf="@+id/AudioprofileImage"
+            android:layout_marginLeft="@dimen/_5sdp"
+
+            android:background="@drawable/message_design"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/AudioTime"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:textSize="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/AudioTime"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="Date"
+                android:id="@+id/AudioDate"
+                android:textSize="@dimen/_8sdp"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <RelativeLayout
+                android:layout_below="@+id/AudioTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/AudioIcon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/audio"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_height="@dimen/_18sdp">
+
+                </ImageView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/carbon_black_87"
+                    android:layout_toRightOf="@+id/AudioIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_centerVertical="true"
+                    android:text="Play Audio"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_height="wrap_content">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

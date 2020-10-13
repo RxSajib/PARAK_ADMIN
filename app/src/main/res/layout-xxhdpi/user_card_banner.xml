@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:background="@drawable/user_card_ripple"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:src="@drawable/qrcode"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="@dimen/_40sdp">
+
+                </ImageView>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp">
+
+                </ImageView>
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ProfileimageID"
+                    android:layout_width="@dimen/_35sdp"
+                    android:background="@drawable/default_image"
+                    android:layout_height="@dimen/_35sdp">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <RelativeLayout
+                    android:layout_toRightOf="@id/ProfileimageID"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/ubuntureguiar"
+                            android:text="ID NO"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_12sdp"
+                            android:id="@+id/UserID"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/carbon_black_87"
+                            android:fontFamily="@font/ubuntureguiar"
+                            android:text="CSE 06307511"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/ubuntureguiar"
+                            android:text="Full Name"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_12sdp"
+                            android:id="@+id/Fullnames"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/carbon_black_87"
+                            android:fontFamily="@font/ubuntureguiar"
+                            android:text="Mr Sajib Roy"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_14sdp"
+                            android:fontFamily="@font/ubuntureguiar"
+                            android:text="Position"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            android:id="@+id/PositionID"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/carbon_red_700"
+                            android:fontFamily="@font/ubuntureguiar"
+                            android:text="Not Verify"
+                            android:textStyle="bold"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

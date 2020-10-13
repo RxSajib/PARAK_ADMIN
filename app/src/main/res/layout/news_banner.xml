@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/iteams_click_ripple"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="7dp">
+
+
+    <RelativeLayout
+        android:id="@+id/BannerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/TopLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/AdminIconID"
+                    android:layout_width="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20dp"
+                    android:src="@drawable/adminicon">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_toRightOf="@id/AdminIconID">
+
+
+                    <ImageButton
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/threedot"
+                        android:background="@null"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp">
+
+                    </ImageButton>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/AdminTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="Admin Post"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/NewAnimactionID"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/AdminTop"
+                        android:layout_marginLeft="5dp"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="new.json"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp">
+
+                    </com.airbnb.lottie.LottieAnimationView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/AdminTop"
+                        android:layout_marginTop="3dp"
+                        android:id="@+id/NewsTimeAndDate"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:textSize="11dp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/MessageLayout"
+            android:layout_below="@id/TopLayout"
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:textSize="10sp"
+                android:id="@+id/NewsMessage"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/ubuntureguiar"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/MessageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/NewsImage"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </ImageView>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

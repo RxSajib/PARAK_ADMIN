@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/carbon_white"
+    tools:context=".Login.LoginPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:textSize="25sp"
+                android:text="Admin Login"
+                android:id="@+id/LoginTextID"
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/ubuntureguiar"
+                android:layout_marginLeft="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <EditText
+                android:id="@+id/EmailID"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_below="@+id/LoginTextID"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:fontFamily="@font/ubuntureguiar"
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:hint="Enter email"
+                android:layout_height="wrap_content">
+
+            </EditText>
+            <EditText
+                android:id="@+id/PasswordID"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/EmailID"
+                android:fontFamily="@font/ubuntureguiar"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_width="match_parent"
+                android:padding="12dp"
+                android:hint="Enter Password"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content">
+            </EditText>
+
+            <Button
+                android:id="@+id/LoginID"
+                android:layout_below="@id/PasswordID"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:fontFamily="@font/ubuntureguiar"
+                android:textColor="@android:color/white"
+                android:text="Login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </Button>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Navagation.HelpFull_details">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MyToolbar"
+        android:background="@color/colorPrimary">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/BackID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/back_icon">
+
+                </ImageView>
+
+            </RelativeLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ToolbarName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:fontFamily="@font/ubuntureguiar"
+                android:text="UserName"
+                android:textColor="@color/carbon_white"
+                android:textSize="@dimen/_15sdp">
+            </com.google.android.material.textview.MaterialTextView>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/MyToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/CheakcBox">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/name"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/mobile"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/Mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/id_no"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/IDNOS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/how_meny_membersfamily"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/FamilymembersID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="Have Received help form Musaque"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/BeforeYougetHelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/source_of_income"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/SourceOFIncome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="Location"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/Location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/monthly_income"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/MontlyIncome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/how_we_can_help_you"
+                        android:textSize="@dimen/_8sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/HelpDetailss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:text="@string/dot"
+                        android:textColor="@color/carbon_black_87"
+                        android:textSize="@dimen/_10sdp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+
+
+
+        <CheckBox
+            android:id="@+id/CheakcBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/DownloadButton"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:visibility="visible"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:text="Do you want to download the document"
+            android:textColor="@color/carbon_red_300"
+            android:textSize="@dimen/_8sdp">
+
+        </CheckBox>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/DownloadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Download Document"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_15sdp">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

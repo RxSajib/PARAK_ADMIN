@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/carbon_white"
+    android:id="@+id/DrawerLayoutID"
+    tools:context=".Homepage.Homepage">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/HomeToolbarID"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/menu_buttonID"
+                        android:padding="@dimen/_5sdp"
+                        android:background="@drawable/back_ripple"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/menu_icon"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp">
+
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:textSize="20sp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@android:color/white"
+                        android:text="Welcome Admin"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                </LinearLayout>
+
+
+
+                <ImageView
+                    android:id="@+id/AddImage"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/jobsicon"
+                    android:layout_width="@dimen/_25sdp"
+                    android:visibility="gone"
+                    android:layout_height="@dimen/_25sdp">
+
+                </ImageView>
+
+            </RelativeLayout>
+
+
+
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <RelativeLayout
+            android:layout_below="@+id/HomeToolbarID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/BottomnavID"
+                android:layout_width="match_parent"
+                app:menu="@menu/bottom_nav_iteams"
+                app:itemTextColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+            <FrameLayout
+                android:id="@+id/MainFreamID"
+                android:layout_below="@+id/BottomnavID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_gravity = "start"
+        android:id="@+id/NavigationviewID"
+        app:headerLayout="@layout/header_layout"
+        app:menu="@menu/navagation_iteams"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

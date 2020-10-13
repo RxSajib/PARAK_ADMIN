@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/LiniLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:textSize="@dimen/_10sdp"
+            android:text="Name"
+            android:fontFamily="@font/ubuntureguiar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <EditText
+            android:id="@+id/TName"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="Enter name"
+            android:fontFamily="@font/ubuntureguiar"
+            android:textSize="@dimen/_15sdp"
+            android:inputType="text"
+            android:maxLength="15"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:textSize="@dimen/_10sdp"
+            android:text="Desigaction"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntureguiar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+
+        <EditText
+            android:id="@+id/Tdes"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:hint="What about your job?"
+            android:fontFamily="@font/ubuntureguiar"
+            android:textSize="@dimen/_15sdp"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/LiniLayout"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@android:color/white"
+            android:text="@string/update"
+            android:id="@+id/TUpdate"
+            app:cornerRadius="@dimen/_15sdp"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@android:color/white"
+            android:text="@string/delete"
+            android:id="@+id/Delete"
+            android:backgroundTint="@android:color/holo_red_light"
+            app:cornerRadius="@dimen/_15sdp"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.button.MaterialButton>
+
+    </RelativeLayout>
+
+</RelativeLayout>

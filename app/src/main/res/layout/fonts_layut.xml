@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_45sdp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:textSize="@dimen/_13sdp"
+        android:id="@+id/Fontname"
+        android:textColor="@color/carbon_teal_700"
+        android:text="Name of fonts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+</RelativeLayout>

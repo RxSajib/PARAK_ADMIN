@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RecoderPage.RecoderPage">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_above="@+id/RecodeButton"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Textview"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/RecodeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:cornerRadius="@dimen/_10sdp"
+        android:text="hold and recode audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.button.MaterialButton>
+
+</RelativeLayout>

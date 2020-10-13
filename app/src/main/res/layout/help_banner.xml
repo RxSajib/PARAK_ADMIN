@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:padding="@dimen/_5sdp"
+            android:background="@drawable/user_card_ripple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/_10sdp"
+                android:id="@+id/HelpTime"
+                android:textColor="@color/carbon_red_300"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <RelativeLayout
+                android:id="@+id/FirstLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:background="@drawable/help_oval"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:textSize="@dimen/_12sdp"
+                        android:text="Help"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:textColor="@android:color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_toRightOf="@id/FirstLayout"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:textSize="@dimen/_10sdp"
+                        android:text="Name"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:textSize="@dimen/_12sdp"
+                        android:id="@+id/HelpName"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:textColor="@color/carbon_black_87"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:textSize="@dimen/_10sdp"
+                        android:text="Phone Number"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:textSize="@dimen/_12sdp"
+                        android:id="@+id/HelpPhoneNumber"
+                        android:fontFamily="@font/ubuntureguiar"
+                        android:textColor="@color/carbon_black_87"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:id="@+id/HelpDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+</RelativeLayout>
