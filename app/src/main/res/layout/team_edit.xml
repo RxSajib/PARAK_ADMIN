@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/EditProfileimage"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_height="@dimen/_65sdp">
+        
+    </de.hdodenhof.circleimageview.CircleImageView>
+    
+    
+
+    
+</RelativeLayout>

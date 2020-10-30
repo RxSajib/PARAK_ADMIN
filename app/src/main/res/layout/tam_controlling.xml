@@ -12,6 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ImageViewID"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/imageadd"
+            android:scaleType="centerCrop"
+            android:layout_height="@dimen/_65sdp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
         <com.google.android.material.textview.MaterialTextView
             android:textSize="@dimen/_10sdp"
             android:text="Name"
@@ -93,6 +107,19 @@
             android:backgroundTint="@android:color/holo_red_light"
             app:cornerRadius="@dimen/_15sdp"
             android:textAllCaps="false"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_toRightOf="@id/Delete"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="Copy"
+            android:padding="@dimen/_5sdp"
+            android:id="@+id/CopyButtonID"
+            app:cornerRadius="@dimen/_15sdp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
         </com.google.android.material.button.MaterialButton>

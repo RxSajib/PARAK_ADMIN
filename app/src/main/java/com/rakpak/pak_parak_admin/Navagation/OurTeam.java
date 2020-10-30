@@ -1,11 +1,18 @@
 package com.rakpak.pak_parak_admin.Navagation;
 
+import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -22,8 +29,10 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.anstrontechnologies.corehelper.AnstronCoreHelper;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -35,6 +44,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.iceteck.silicompressorr.FileUtils;
+import com.iceteck.silicompressorr.SiliCompressor;
 import com.rakpak.pak_parak_admin.BottomSheedDioloag.AddTeamBottomSheed;
 import com.rakpak.pak_parak_admin.DataManager.DataManager;
 import com.rakpak.pak_parak_admin.Model.TeamModal;
@@ -43,10 +57,13 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static android.app.Activity.RESULT_OK;
 
 public class OurTeam extends Fragment {
 
@@ -57,6 +74,13 @@ public class OurTeam extends Fragment {
     private static final int SPANCOUNT = 2;
     private String name, designation;
     private LinearLayout show_team;
+    private String teaname, deg, uri;
+    private AnstronCoreHelper anstronCoreHelper;
+    private int PERMISSIONCODE = 1;
+    private static final int IMAGEREQUESTCODE = 10;
+    private StorageReference MimageStores;
+    private ProgressDialog progressDialog;
+    private String ImageDownloadUri;
 
     public OurTeam() {
         // Required empty public constructor
@@ -70,6 +94,11 @@ public class OurTeam extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.our_team, container, false);
+
+        progressDialog = new ProgressDialog(getActivity());
+
+        MimageStores = FirebaseStorage.getInstance().getReference().child("TeamImage");
+        anstronCoreHelper = new AnstronCoreHelper(getActivity());
 
         show_team = view.findViewById(R.id.ShowTeamView);
         MTeamDatabase = FirebaseDatabase.getInstance().getReference().child(DataManager.TeamDatabaseRoot);
@@ -147,7 +176,23 @@ public class OurTeam extends Fragment {
                                                 View Mview = LayoutInflater.from(getActivity()).inflate(R.layout.tam_controlling, null, false);
 
                                                 final EditText nametext, deginationtext;
-                                                final MaterialButton update, delete;
+                                                final MaterialButton update, delete, copy;
+
+                                                CircleImageView profileimage = Mview.findViewById(R.id.ImageViewID);
+                                                copy = Mview.findViewById(R.id.CopyButtonID);
+
+                                                profileimage.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+
+                                                        if(imagepermission()){
+                                                            Intent intent = new Intent(Intent.ACTION_PICK);
+                                                            intent.setType("image/*");
+                                                            startActivityForResult(intent, IMAGEREQUESTCODE);
+                                                        }
+
+                                                    }
+                                                });
 
                                                 nametext = Mview.findViewById(R.id.TName);
                                                 deginationtext = Mview.findViewById(R.id.Tdes);
@@ -192,6 +237,9 @@ public class OurTeam extends Fragment {
                                                                                     Map<String, Object> usermap = new HashMap<String, Object>();
                                                                                     usermap.put(DataManager.TeamDesignation, deginactionstring);
                                                                                     usermap.put(DataManager.TeamName, namestring);
+                                                                                    if(!ImageDownloadUri.isEmpty()){
+                                                                                        usermap.put(DataManager.TeamURI, ImageDownloadUri);
+                                                                                    }
 
                                                                                     MTeamDatabase.child(uid).updateChildren(usermap)
                                                                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -216,6 +264,41 @@ public class OurTeam extends Fragment {
                                                                             public void onClick(View view) {
                                                                                 MTeamDatabase.child(uid).removeValue();
                                                                                 alertDialog.dismiss();
+                                                                            }
+                                                                        });
+
+                                                                        copy.setOnClickListener(new View.OnClickListener() {
+                                                                            @Override
+                                                                            public void onClick(View v) {
+
+                                                                                if(dataSnapshot.hasChild(DataManager.TeamName)){
+                                                                                     teaname = dataSnapshot.child(DataManager.TeamName).getValue().toString();
+                                                                                }
+                                                                                if(dataSnapshot.hasChild(DataManager.TeamDesignation)){
+                                                                                     deg = dataSnapshot.child(DataManager.TeamDesignation).getValue().toString();
+                                                                                }
+                                                                                if(dataSnapshot.hasChild(DataManager.TeamURI)){
+                                                                                     uri = dataSnapshot.child(DataManager.TeamURI).getValue().toString();
+                                                                                }
+
+
+                                                                                Map<String, Object> copymap = new HashMap<String, Object>();
+                                                                                copymap.put(DataManager.TeamName, teaname);
+                                                                                copymap.put(DataManager.TeamDesignation, deg);
+                                                                                copymap.put(DataManager.TeamURI, uri);
+
+                                                                                MTeamDatabase.push().updateChildren(copymap)
+                                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                            @Override
+                                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                                if(task.isSuccessful()){
+
+                                                                                                }
+                                                                                                else {
+                                                                                                    Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                                                                                }
+                                                                                            }
+                                                                                        });
                                                                             }
                                                                         });
 
@@ -292,6 +375,65 @@ public class OurTeam extends Fragment {
         }
         public void setDesginactionset(String des){
             desginaction.setText(des);
+        }
+    }
+
+    private boolean imagepermission(){
+        if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+            return true;
+        }
+        else {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSIONCODE);
+            return false;
+        }
+
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IMAGEREQUESTCODE && resultCode == RESULT_OK) {
+
+            progressDialog.setMessage("wait for a moment your image is uploading");
+            progressDialog.setTitle("Please wait ...");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            Uri imageuei = data.getData();
+            if(imageuei != null){
+                final File file = new File(SiliCompressor.with(getActivity())
+                        .compress(FileUtils.getPath(getActivity(), imageuei), new File(getActivity().getCacheDir(), "temp")));
+
+                Uri fromfile = Uri.fromFile(file);
+
+                MimageStores.child(anstronCoreHelper.getFileNameFromUri(fromfile))
+                        .putFile(fromfile)
+                        .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                                if(task.isSuccessful()){
+                                    progressDialog.dismiss();
+                                    Toast.makeText(getContext(), "Image is upload success", Toast.LENGTH_LONG).show();
+
+                                    ImageDownloadUri = task.getResult().getDownloadUrl().toString();
+
+                                }
+                                else {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                progressDialog.dismiss();
+                                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+            }
         }
     }
 }

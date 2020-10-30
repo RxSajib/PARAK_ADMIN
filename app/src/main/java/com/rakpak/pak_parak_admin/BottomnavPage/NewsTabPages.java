@@ -16,11 +16,17 @@ import android.provider.Contacts;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -160,6 +166,58 @@ public class NewsTabPages extends Fragment {
                                                         @Override
                                                         public void onClick(DialogInterface dialogInterface, int i) {
                                                             if(i == 0){
+
+
+                                                                MaterialAlertDialogBuilder Mbuilder = new MaterialAlertDialogBuilder(getActivity());
+
+                                                                View myview = LayoutInflater.from(getActivity()).inflate(R.layout.news_update_tem, null, false);
+
+                                                                EditText details = myview.findViewById(R.id.DetailsInput);
+                                                                MaterialButton pickimage = myview.findViewById(R.id.ImageButtonID);
+                                                                MaterialButton update = myview.findViewById(R.id.UpdateButton);
+
+
+
+                                                                Mbuilder.setView(myview);
+                                                                AlertDialog alertDialog = Mbuilder.create();
+                                                                alertDialog.show();
+
+                                                                if(dataSnapshot.hasChild("message")){
+                                                                    String message = dataSnapshot.child("message").getValue().toString();
+                                                                    details.setText(message);
+
+
+                                                                    update.setOnClickListener(new View.OnClickListener() {
+                                                                        @Override
+                                                                        public void onClick(View v) {
+                                                                            if(message.isEmpty()){
+                                                                                Toast.makeText(getContext(), "Message require", Toast.LENGTH_LONG).show();
+                                                                            }
+                                                                            else {
+                                                                                Mnewsdatabase.child(UID).child("message").setValue(message)
+                                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                            @Override
+                                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                                if(task.isSuccessful()){
+                                                                                                    alertDialog.dismiss();
+                                                                                                }
+                                                                                                else {
+                                                                                                    Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                                                                                }
+                                                                                            }
+                                                                                        })
+                                                                                        .addOnFailureListener(new OnFailureListener() {
+                                                                                            @Override
+                                                                                            public void onFailure(@NonNull Exception e) {
+                                                                                               Toast.makeText(getContext(), e.getMessage().toString(), Toast.LENGTH_LONG).show();
+                                                                                            }
+                                                                                        });
+                                                                            }
+                                                                        }
+                                                                    });
+
+                                                                }
+
 
                                                             }
                                                             if(i == 1){
